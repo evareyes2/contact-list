@@ -39,6 +39,16 @@ function Contacto(id, nombres, apellidos, telefono, ubicaciones) {
     });
   }
 
+  
+
   agregarContacto(6, "Pedro", "Andrade", "666 666666", [{ ciudad: "Barranquilla", dirección: "Dirección6" }]);
   borrarContacto(5);
   imprimirContactos();
+
+  function actualizarContacto(id, nuevosDatos) {
+    const contacto = listaDeContactos.find((c) => c.id === id);
+    if (contacto) {
+      // Actualizar las propiedades con los nuevos datos
+      Object.assign(contacto, nuevosDatos);
+    }
+  }
